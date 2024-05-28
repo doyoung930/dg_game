@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -16,12 +18,22 @@ public class Player : MonoBehaviour
 
         // transform.position += moveTo * moveSpeed * Time.deltaTime;
 
-        Vector3 moveTo = new Vector3(moveSpeed * Time.deltaTime,0,0);
-        if(Input.GetKey(KeyCode.LeftArrow)){
-            transform.position -= moveTo;
+    //---
+        // Vector3 moveTo = new Vector3(moveSpeed * Time.deltaTime,0,0);
+        // if(Input.GetKey(KeyCode.LeftArrow)){
+        //     transform.position -= moveTo;
 
-        }else if(Input.GetKey(KeyCode.RightArrow)){
-            transform.position += moveTo;
-        }
+        // }else if(Input.GetKey(KeyCode.RightArrow)){
+        //     transform.position += moveTo;
+        // }
+
+    //---
+
+
+        UnityEngine.Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
+        float toX = Mathf.Clamp(mousePos.x, -2.35f, 2.35f);
+        
+        transform.position = new UnityEngine.Vector3(toX, -4f, transform.position.z);
     }
-}
+} 
