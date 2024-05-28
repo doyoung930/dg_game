@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
+//using System.Numerics;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
@@ -8,6 +8,17 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed;
+
+    [SerializeField]
+    private GameObject weapon;
+    
+    [SerializeField]
+    private Transform shootTransform;
+    
+    [SerializeField]
+private float shootInterval = 0.05f;
+private float lastShortTime = 0f;
+
     // Update is called once per frame
     void Update()
     {
@@ -30,10 +41,22 @@ public class Player : MonoBehaviour
     //---
 
 
-        UnityEngine.Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
         float toX = Mathf.Clamp(mousePos.x, -2.35f, 2.35f);
         
-        transform.position = new UnityEngine.Vector3(toX, -4f, transform.position.z);
+        transform.position = new Vector3(toX, -4f, transform.position.z);
+    
+        Shoot();
+    }
+
+    void Shoot(){
+
+        if (Time.time - lastShortTime > shootInterval){
+            Instantiate(weapon, shootTransform.position, Quaternion.identity);
+            lastShortTime = Time.time;    
+        }
+        
+    
     }
 } 
