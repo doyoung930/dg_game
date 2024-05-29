@@ -7,13 +7,32 @@ public class Enemyspawner : MonoBehaviour
     [SerializeField]
     private GameObject[] enemies; 
     private float[] arrPosX = {-2.2f, -1.1f, 0f, 1.1f, 2.2f};
+    
+    private float spawnInterval = 1.5f;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-        int index = Random.Range(0, enemies.Length);
-        SpawnEnemy(arrPosX[0], index);
+        StartEnemyRoutine();
+        
     }
 
+    void StartEnemyRoutine(){
+        StartCoroutine("EnemyRoutine");
+    }
+    IEnumerator EnemyRoutine() {
+        yield return new WaitForSeconds(3f);
+
+        while (true){
+            foreach(float posX in arrPosX){
+                int index = Random.Range(0, enemies.Length);
+                SpawnEnemy(posX, index);
+            }
+
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
     // Update is called once per frame
     void SpawnEnemy(float posX, int index)
     {
