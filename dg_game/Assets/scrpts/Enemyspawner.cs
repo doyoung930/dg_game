@@ -24,10 +24,19 @@ public class Enemyspawner : MonoBehaviour
     IEnumerator EnemyRoutine() {
         yield return new WaitForSeconds(3f);
 
+
+        int spawnCount = 0;
+        int enemyIndex = 0;
+
         while (true){
             foreach(float posX in arrPosX){
-                int index = Random.Range(0, enemies.Length);
-                SpawnEnemy(posX, index);
+                SpawnEnemy(posX, enemyIndex);
+            }
+
+            spawnCount += 1;
+
+            if (spawnCount % 10 == 0) {
+                enemyIndex += 1;
             }
 
             yield return new WaitForSeconds(spawnInterval);
