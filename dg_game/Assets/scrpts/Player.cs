@@ -60,4 +60,12 @@ private float lastShortTime = 0f;
         
     
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Enemy"){
+            
+            Debug.Log("Game Over");
+            Destroy(gameObject);
+        }
+    }
 } 
