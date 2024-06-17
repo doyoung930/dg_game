@@ -56,6 +56,7 @@ private float lastShortTime = 0f;
             Instantiate(weapon, shootTransform.position, Quaternion.identity);
             lastShortTime = Time.time;    
         }
+
         
     
     }
