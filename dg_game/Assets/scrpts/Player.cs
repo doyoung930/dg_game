@@ -55,10 +55,7 @@ private float lastShortTime = 0f;
         if (Time.time - lastShortTime > shootInterval){
             Instantiate(weapon, shootTransform.position, Quaternion.identity);
             lastShortTime = Time.time;    
-        }
-
-        
-    
+        } 
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
