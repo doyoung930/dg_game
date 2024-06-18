@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+
 //using System.Numerics;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
@@ -60,7 +62,7 @@ private float lastShortTime = 0f;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.tag == "Enemy"){
+        if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss"){
             
             Debug.Log("Game Over");
             Destroy(gameObject);
@@ -68,7 +70,7 @@ private float lastShortTime = 0f;
             Debug.Log("Coin +1");
             GameManager.instance.IncreaseCoin();
             Destroy(other.gameObject);
-        }
+        } 
     }
 
     public void Upgrade() {

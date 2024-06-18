@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3560419863867776922}
   - component: {fileID: 609850845296469734}
   m_Layer: 0
-  m_Name: Enemy1
-  m_TagString: Enemy
+  m_Name: Boss
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: -1704810586, guid: 3cd60a05bb841d7489eef0d91530d707, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -480961539, guid: 3cd60a05bb841d7489eef0d91530d707, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 6667386783230303304, guid: ba993f6d2aff5014d8e963db89812221, type: 3}
-  moveSpeed: 5
-  hp: 1
+  moveSpeed: 0.5
+  hp: 200
 --- !u!61 &3560419863867776922
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -134,18 +134,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013576806, y: 0}
+  m_Offset: {x: -0.008454382, y: -0.005507469}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.60714287, y: 1.7857143}
+    oldSize: {x: 1.8214285, y: 1.7142857}
     newSize: {x: 0.17, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9872943, y: 1.7857143}
+  m_Size: {x: 1.8244871, y: 1.7729435}
   m_EdgeRadius: 0
 --- !u!50 &609850845296469734
 Rigidbody2D:
