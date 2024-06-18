@@ -1354,7 +1354,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  weapon: {fileID: 3364397585674268660, guid: ec6e6a969ee7ea24086c13d6acbd9681, type: 3}
+  weapons:
+  - {fileID: 3364397585674268660, guid: ec6e6a969ee7ea24086c13d6acbd9681, type: 3}
+  - {fileID: 3364397585674268660, guid: 681550c921f3405459c4efc38585e71b, type: 3}
+  - {fileID: 3364397585674268660, guid: e6d009c420ea5544e89a168101feeeb9, type: 3}
   shootTransform: {fileID: 1846471573}
   shootInterval: 0.1
 --- !u!58 &1996704816
