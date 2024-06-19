@@ -64,10 +64,11 @@ private float lastShortTime = 0f;
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss"){
             
-            Debug.Log("Game Over");
+            GameManager.instance.SetGameOver();
+
             Destroy(gameObject);
         } else if(other.gameObject.tag == "Coin"){
-            Debug.Log("Coin +1");
+            //Debug.Log("Coin +1");
             GameManager.instance.IncreaseCoin();
             Destroy(other.gameObject);
         } 
