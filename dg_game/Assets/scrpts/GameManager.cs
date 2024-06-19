@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     private int coin = 0;
 
+    [HideInInspector]
+    public bool isGameOver = false;
+
     void Awake() {
         if (instance == null){
             instance = this;
@@ -31,6 +34,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void SetGameOver(){
+
+        isGameOver = true;
+
         Enemyspawner enemyspawner = FindObjectOfType<Enemyspawner>();
 
         if (enemyspawner != null){

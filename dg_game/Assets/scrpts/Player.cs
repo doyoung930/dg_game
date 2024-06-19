@@ -49,8 +49,10 @@ private float lastShortTime = 0f;
         float toX = Mathf.Clamp(mousePos.x, -2.35f, 2.35f);
         
         transform.position = new Vector3(toX, -4f, transform.position.z);
-    
-        Shoot();
+
+        if (GameManager.instance.isGameOver == false){
+            Shoot();
+        }
     }
 
     void Shoot(){
