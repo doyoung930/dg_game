@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject gameOverPanel;
 
+    [SerializeField]
+    private GameObject endGamePanel;
+
     private int coin = 0;
 
     [HideInInspector]
@@ -53,7 +56,14 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
+
+
     public void PlayAgain(){
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void EndGame(){
+        Debug.Log("quit");
+        Application.Quit();
     }
 }
