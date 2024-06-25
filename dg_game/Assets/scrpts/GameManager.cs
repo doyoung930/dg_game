@@ -27,9 +27,11 @@ public class GameManager : MonoBehaviour
             instance = this;
         }    
     }
+    
+    
 
     public void IncreaseCoin(){
-        coin += 1;
+       coin += 1;
         text.SetText(coin.ToString());
 
         if(coin % 30 == 0){

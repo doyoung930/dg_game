@@ -14,5 +14,9 @@ public class Background : MonoBehaviour
         if (transform.position.y < -10) {
             transform.position += new Vector3(0, 20f, 0);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            GameManager.instance.EndGame();
+        }
     }
 }
