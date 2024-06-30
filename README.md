@@ -3,6 +3,7 @@
 
 <img src="https://github.com/doyoung930/dg_game/assets/70666642/13508a56-cf60-44b7-882b-82cc6446d111" width="650" height="350"/>
 <img src="https://github.com/doyoung930/dg_game/assets/70666642/e5a58c69-ff48-4ab4-bf8e-99b9319bc0a2" width="650" height="350"/>
+
  캐릭터 이동 : 마우스
  
  게임 종료 esc 
